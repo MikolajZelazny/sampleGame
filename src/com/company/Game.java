@@ -8,6 +8,7 @@ import java.util.Random;
 
 /**
  * This class contantilogic orender
+ *
  * @author Mikolaj
  */
 public class Game extends Canvas implements Runnable {
@@ -17,22 +18,22 @@ public class Game extends Canvas implements Runnable {
     private Thread thread;
     private boolean running = false;
     private Handler handler;
-    private Random r;
+    private Random random;
 
     public Game() {
+        handler = new Handler();
+        this.addKeyListener(new KeyInput(handler));
+
         new Window(WIDTH, HEIGHT, "GAME", this);
 
-        handler = new Handler();
-        r = new Random();
+        random = new Random();
 
-        for (int i = 0; i < 10; i++){
-            handler.addObject(new Player(r.nextInt(WIDTH),r.nextInt(HEIGHT),ID.Player));
-        }
-
-        handler.addObject(new Player(100,100, ID.Player));
+        handler.addObject(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Player));
+        handler.addObject(new Player(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.Player2));
     }
 
     public synchronized void start() {
+        super.addKeyListener(null);
         thread = new Thread(this); //Poczytac
         thread.start();
         running = true;
