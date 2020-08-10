@@ -7,7 +7,7 @@ public class Splash extends GameObject {
 
     public Splash(int x, int y, ID id) {
         super(x, y, id);
-
+        // for here or int directions as input for method
         velX = 1;
         velY = -velX*2;
     }
