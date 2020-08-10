@@ -14,7 +14,7 @@ import java.util.Random;
 public class Game extends Canvas implements Runnable {
 
     private static final long serialVersionUID = 4983030414942140047L;
-    public static final int WIDTH = 840, HEIGHT = WIDTH / 12 * 9;
+    public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
     private Thread thread;
     private boolean running = false;
     private Handler handler;
@@ -30,10 +30,11 @@ public class Game extends Canvas implements Runnable {
 
         handler.addObject(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Player));
         handler.addObject(new Player(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.Player2));
+        handler.addObject(new BasicEnemy(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.BasicEnemy));
+
     }
 
     public synchronized void start() {
-        super.addKeyListener(null);
         thread = new Thread(this); //Poczytac
         thread.start();
         running = true;
@@ -96,6 +97,16 @@ public class Game extends Canvas implements Runnable {
 
         g.dispose();
         bs.show();
+    }
+
+
+    public static int clamp(int var, int min, int max) {
+        if (var >= max)
+            return var = max;
+        else if(var <= min)
+            return var = min;
+        else
+            return var;
     }
 
     public static void main(String[] args) {
