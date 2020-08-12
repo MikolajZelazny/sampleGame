@@ -2,6 +2,8 @@ package com.company;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 public class BasicEnemy extends GameObject {
     public BasicEnemy(int x, int y, ID id) {
@@ -9,6 +11,10 @@ public class BasicEnemy extends GameObject {
 
         velX = 5;
         velY = 5;
+    }
+
+    public Rectangle getBounds(){
+        return new Rectangle(x, y, 16,16);
     }
 
     @Override
@@ -22,7 +28,13 @@ public class BasicEnemy extends GameObject {
 
     @Override
     public void render(Graphics g) {
-        g.setColor(Color.red);
-        g.fillRect(x,y,16,16);
+
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.green);
+        g2d.draw(getBounds());
+
+
+        //g.setColor(Color.red);
+        //g.fillRect(x,y,16,16);
     }
 }

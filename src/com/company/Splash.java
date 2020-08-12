@@ -1,15 +1,17 @@
-package com.company;
+/*package com.company;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
 public class Splash extends GameObject {
 
+    //mechanizm rekurencji
     public Splash(int x, int y, ID id) {
         super(x, y, id);
         // for here or int directions as input for method
         velX = 1;
         velY = -velX*2;
+
     }
 
     @Override
@@ -28,3 +30,4 @@ public class Splash extends GameObject {
     }
 
 }
+*/
