@@ -2,6 +2,8 @@ package com.company;
 
 import java.awt.*;
 
+
+//AFTER COMMENTING CLASS AND IMPLEMENTATION IN GAME ERROR OCCURES (HOW TO FIND REASON)
 public class Splash extends GameObject {
     public Rectangle getBounds(){
         return new Rectangle(x, y, 10,10);
@@ -12,8 +14,8 @@ public class Splash extends GameObject {
         super(x, y, id);
         // for here or int directions as input for method
         // for inside constructor
-        velX = 20;
-        velY = 20;
+        velX = 2;
+        velY = 2;
 
     }
 
@@ -23,7 +25,7 @@ public class Splash extends GameObject {
             x += velX*0.2;
             y += velY*0.2;
             //this.velX*0.2;
-            System.out.println(getVelX());
+            //System.out.println(getVelX());
         }
 
 

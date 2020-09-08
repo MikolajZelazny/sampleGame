@@ -29,9 +29,12 @@ public class Game extends Canvas implements Runnable {
         hud = new HUD();
         random = new Random();
 
-        handler.addObject(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Player, handler));
-        handler.addObject(new Player(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.Player2, handler));
-        handler.addObject(new BasicEnemy(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.BasicEnemy));
+        Player player1 = new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Player, handler);
+        Player player2 = new Player(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.Player2, handler);
+
+        handler.addObject(player1);
+        handler.addObject(player2);
+        handler.addObject(new BasicEnemy(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.BasicEnemy, player1, player2));
         for (int i = 0; i < 10; i++) {
             handler.addObject(new Splash(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Splash));
         }
@@ -102,7 +105,7 @@ public class Game extends Canvas implements Runnable {
 
         handler.render(g);
         hud.render(g);
-
+        hud.render(g);
         g.dispose();
         bs.show();
     }

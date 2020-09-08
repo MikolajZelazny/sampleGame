@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 
 public abstract class GameObject {
 
-    protected int x, y;
+    protected int x, y, player1_x, player1_y, player2_x, player2_y;
     protected ID id;
     protected double velX;
     protected double velY;

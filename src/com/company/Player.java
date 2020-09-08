@@ -36,7 +36,7 @@ public class Player extends GameObject {
             GameObject temoObject = handler.object.get(i);
 
             if (temoObject.getId()==ID.BasicEnemy) {
-                if (getBounds().intersects(temoObject.getBounds())){
+                if (getBounds().intersects(temoObject.getBounds())){ // getID player ++, p--
                     HUD.HEALTH -= 2;
                 }
             }
@@ -49,6 +49,6 @@ public class Player extends GameObject {
         if(id == ID.Player) g.setColor((Color.green));
         else if (id == ID.Player2) g.setColor(Color.black);
         //g.setColor(Color.green);
-        g.fillRect(x, y, 32, 32);
+        g.fillRect(x, y, 32, 96);
     }
 }

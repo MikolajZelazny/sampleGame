@@ -6,15 +6,22 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 public class BasicEnemy extends GameObject {
-    public BasicEnemy(int x, int y, ID id) {
+
+    public BasicEnemy(int x, int y, ID id, Player player1, Player player2) {
         super(x, y, id);
 
         velX = 5;
         velY = 5;
+        player1_x = player1.getX();
+        player1_y = player1.getY();
+        player2_x = player2.getX();
+        player2_y = player2.getY();
     }
 
     public Rectangle getBounds(){
-        return new Rectangle(x, y, 16,16);
+        Rectangle rect = new Rectangle(x, y, 16,16);
+        //rect.setFrame();
+        return rect;
     }
 
     @Override
@@ -24,6 +31,13 @@ public class BasicEnemy extends GameObject {
 
         if(y <= 0 || y >=Game.HEIGHT-32) velY *= -1;
         if(x <= 0 || x>=Game.WIDTH-16) velX *= -1;
+
+        //pileczka weszla w interakcje z paletka
+
+
+        System.out.println("Enemy x:" + x + " y:" + y);
+        System.out.println("Player1 x:" + player1_x + " y:" + player1_y);
+        System.out.println("Player2 x:" + player2_x + " y:" + player2_y);
     }
 
     @Override
