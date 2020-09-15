@@ -5,6 +5,6 @@ public enum ID {
     Player(),
     Player2(),
     Splash(),
-    BasicEnemy();
+    Ball();
 
 }

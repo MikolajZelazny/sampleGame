@@ -5,18 +5,19 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.Random;
 
-public class Player extends GameObject {
+public class Rocket extends GameObject {
 
+    boolean isCollion = false;
     Random r = new Random();
     Handler handler;
 
-    public Player(int x, int y, ID id, Handler handler) {
+    public Rocket(int x, int y, ID id, Handler handler) {
         super(x, y, id);
         this.handler = handler;
     }
 
     public Rectangle getBounds(){
-        return new Rectangle(x, y, 32,32);
+        return new Rectangle(x, y, 32,96);
     }
 
     @Override
@@ -35,9 +36,10 @@ public class Player extends GameObject {
 
             GameObject tempObject = handler.object.get(i);
 
-            if (tempObject.getId()==ID.BasicEnemy) {
+            if (tempObject.getId()==ID.Ball) {
                 if (getBounds().intersects(tempObject.getBounds())){ // getID player ++, p--
                     HUD.HEALTH -= 2;
+                    isCollion = true;
                 }
             }
         }
