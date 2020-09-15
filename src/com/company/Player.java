@@ -33,10 +33,10 @@ public class Player extends GameObject {
     private void collision (){
         for (int i = 0; i < handler.object.size(); i++) {
 
-            GameObject temoObject = handler.object.get(i);
+            GameObject tempObject = handler.object.get(i);
 
-            if (temoObject.getId()==ID.BasicEnemy) {
-                if (getBounds().intersects(temoObject.getBounds())){ // getID player ++, p--
+            if (tempObject.getId()==ID.BasicEnemy) {
+                if (getBounds().intersects(tempObject.getBounds())){ // getID player ++, p--
                     HUD.HEALTH -= 2;
                 }
             }
