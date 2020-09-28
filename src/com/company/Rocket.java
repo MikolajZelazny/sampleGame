@@ -20,6 +20,20 @@ public class Rocket extends GameObject {
         return new Rectangle(x, y, 32,96);
     }
 
+
+    public Rectangle getBoundsLeft() {
+        return new Rectangle(x, y, 0,0);
+    }
+    public Rectangle getBoundsRight() {
+        return new Rectangle(x, y+15, 0,0);
+    }
+    public Rectangle getBoundsTop() {
+        return new Rectangle(x, y, 0,0);
+    }
+    public Rectangle getBoundsDown() {
+        return new Rectangle(x+15, y, 0,0);
+    }
+
     @Override
     public void tick() {
         x += velX;

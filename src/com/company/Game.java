@@ -29,15 +29,16 @@ public class Game extends Canvas implements Runnable {
         hud = new HUD();
         random = new Random();
 
-        Rocket rocket1 = new Rocket(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Player, handler);
-        Rocket rocket2 = new Rocket(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.Player2, handler);
+        Rocket rocket1 = new Rocket(WIDTH / 2 - 62, HEIGHT / 2 - 32, ID.Player, handler);
+        Rocket rocket2 = new Rocket(WIDTH / 2 + 94, HEIGHT / 2 - 32, ID.Player2, handler);
+        handler.addObject(new RectBall(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.Ball, handler, rocket1, rocket2));
 
         handler.addObject(rocket1);
         handler.addObject(rocket2);
         handler.addObject(new Ball(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.Ball, rocket1, rocket2));
-        for (int i = 0; i < 10; i++) {
-            handler.addObject(new Splash(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Splash));
-        }
+//        for (int i = 0; i < 10; i++) {
+//            handler.addObject(new Splash(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Splash));
+//        }
 
         //handler.addObject(new Splash(WIDTH / 2, HEIGHT / 2 - 32, ID.Splash));
     }

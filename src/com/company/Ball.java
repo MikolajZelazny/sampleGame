@@ -7,14 +7,46 @@ import java.awt.Rectangle;
 
 public class Ball extends GameObject {
 
+
+    public Rectangle getBoundsLeft() {
+        return new Rectangle(x, y, 0,0);
+    }
+    public Rectangle getBoundsRight() {
+        return new Rectangle(x, y+15, 0,0);
+    }
+    public Rectangle getBoundsTop() {
+        return new Rectangle(x, y, 0,0);
+    }
+    public Rectangle getBoundsDown() {
+        return new Rectangle(x+15, y, 0,0);
+    }
+//    @Override
+//    public Rectangle getBoundsLeft() {
+//        return null;
+//    }
+//
+//    @Override
+//    public Rectangle getBoundsRight() {
+//        return null;
+//    }
+//
+//    @Override
+//    public Rectangle getBoundsTop() {
+//        return null;
+//    }
+//
+//    @Override
+//    public Rectangle getBoundsDown() {
+//        return null;
+//    }
     private Rocket rocket1;
     private Rocket rocket2;
 
     public Ball(int x, int y, ID id, Rocket rocket1, Rocket rocket2) {
         super(x, y, id);
 
-        velX = 0.5;
-        velY = 0.5;
+        velX = 2;
+        velY = 2;
         this.rocket1=rocket1;
         this.rocket2 = rocket2;
         player1_x = rocket1.getX();
@@ -53,9 +85,9 @@ public class Ball extends GameObject {
         //pileczka weszla w interakcje z paletka
 
 
-        System.out.println("Enemy x:" + x + " y:" + y);
-        System.out.println("Player1 x:" + player1_x + " y:" + player1_y);
-        System.out.println("Player2 x:" + player2_x + " y:" + player2_y);
+//        System.out.println("Enemy x:" + x + " y:" + y);
+//        System.out.println("Player1 x:" + player1_x + " y:" + player1_y);
+//        System.out.println("Player2 x:" + player2_x + " y:" + player2_y);
     }
 
     @Override
