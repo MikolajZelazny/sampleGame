@@ -1,4 +1,4 @@
-package com.company;
+/*package com.company;
 
 import java.awt.*;
 
@@ -48,3 +48,4 @@ public class Splash extends GameObject {
     }
 
 }
+*/
