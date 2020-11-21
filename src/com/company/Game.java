@@ -105,7 +105,6 @@ public class Game extends Canvas implements Runnable {
 
         handler.render(g);
         hud.render(g);
-        hud.render(g);
         g.dispose();
         bs.show();
     }
