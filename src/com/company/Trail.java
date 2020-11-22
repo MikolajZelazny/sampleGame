@@ -36,7 +36,12 @@ public class Trail extends GameObject {
         g2d.setComposite(makeTransparent(alpha));
 
         g.setColor(color);
-        g.fillRect(x,y,16,16);
+
+        for (int i = 0; i < handler.object.size(); i++) {
+            GameObject tempObject = handler.object.get(i);
+            if (tempObject.getId() == ID.BasicEnemy) g.fillRect(x, y, 16, 16);
+            else if (tempObject.getId() == ID.Player) g.fillRect(x, y, 32, 96);
+        }
 
         g2d.setComposite(makeTransparent(1));
     }
