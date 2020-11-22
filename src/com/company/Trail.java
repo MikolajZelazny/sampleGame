@@ -32,16 +32,10 @@ public class Trail extends GameObject {
     @Override
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-
         g2d.setComposite(makeTransparent(alpha));
 
         g.setColor(color);
-
-        for (int i = 0; i < handler.object.size(); i++) {
-            GameObject tempObject = handler.object.get(i);
-            if (tempObject.getId() == ID.BasicEnemy) g.fillRect(x, y, 16, 16);
-            else if (tempObject.getId() == ID.Player) g.fillRect(x, y, 32, 96);
-        }
+        g.fillRect(x,y,width,height);
 
         g2d.setComposite(makeTransparent(1));
     }
