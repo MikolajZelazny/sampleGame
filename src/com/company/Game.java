@@ -20,6 +20,7 @@ public class Game extends Canvas implements Runnable {
     private Handler handler;
     private Random random;
     private HUD hud;
+    private Spawn spawner;
 
     public Game() {
         handler = new Handler();
@@ -27,14 +28,15 @@ public class Game extends Canvas implements Runnable {
         new Window(WIDTH, HEIGHT, "GAME", this);
 
         hud = new HUD();
+        spawner = new Spawn(handler, hud);
         random = new Random();
 
         Player player1 = new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Player, handler);
         Player player2 = new Player(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.Player2, handler);
-
         handler.addObject(player1);
         handler.addObject(player2);
-        handler.addObject(new BasicEnemy(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.BasicEnemy,handler, player1, player2));
+
+        //handler.addObject(new BasicEnemy(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.BasicEnemy,handler, player1, player2));
         //for (int i = 0; i < 10; i++) {
         //    handler.addObject(new Splash(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Splash));
         //}
