@@ -16,7 +16,7 @@ public class Player extends GameObject {
     }
 
     public Rectangle getBounds(){
-        return new Rectangle(x, y, 32,96);
+        return new Rectangle(x, y, 17,32);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Player extends GameObject {
         x = Game.clamp(x,0,Game.WIDTH-37);
         y = Game.clamp(y,0,Game.HEIGHT-60);
 
-        handler.addObject(new Trail(x+2 , y, ID.Trail, Color.green, 32, 96, 0.1f, handler));
+        handler.addObject(new Trail(x+2 , y, ID.Trail, Color.green, 17, 32, 0.1f, handler));
 
         collision();
     }
@@ -51,6 +51,6 @@ public class Player extends GameObject {
         if(id == ID.Player) g.setColor((Color.green));
         else if (id == ID.Player2) g.setColor(Color.black);
         //g.setColor(Color.green);
-        g.fillRect(x, y, 32, 96);
+        g.fillRect(x, y, 17, 32);
     }
 }

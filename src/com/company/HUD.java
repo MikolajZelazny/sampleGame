@@ -15,6 +15,7 @@ public class HUD {
         HEALTH=Game.clamp(HEALTH,0,100);
         greenValue = Game.clamp(greenValue,0,255);
 
+        score++;
         greenValue = HEALTH*2;
 
     }
@@ -29,5 +30,21 @@ public class HUD {
 
         g.drawString("Score: " + score, 12, 64);
         g.drawString("Level: " + level, 12, 80);
+    }
+
+    private void score(int score){
+        this.score=score;
+    }
+
+    public int getScore(){
+        return score;
+    }
+
+    public int getLevel(){
+        return level;
+    }
+
+    public void setLevel(int level){
+        this.level = level;
     }
 }
