@@ -42,8 +42,6 @@ public class BasicEnemy extends GameObject {
 
 
         System.out.println("Enemy x:" + x + " y:" + y);
-        //System.out.println("Player1 x:" + player1_x + " y:" + player1_y);
-        //System.out.println("Player2 x:" + player2_x + " y:" + player2_y);
     }
 
     @Override
