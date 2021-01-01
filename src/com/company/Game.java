@@ -10,6 +10,8 @@ import java.util.Random;
  * This class contantilogic orender
  *
  * @author Mikolaj
+ *
+ * 2021 New Year Resolution
  */
 public class Game extends Canvas implements Runnable {
 
