@@ -9,15 +9,16 @@ public class BasicEnemy extends GameObject {
 
     private Handler handler;
 
-    public BasicEnemy(int x, int y, ID id, Handler handler, Player player1, Player player2) {
+    public BasicEnemy(int x, int y, ID id, Handler handler) {
+        //public BasicEnemy(int x, int y, ID id, Handler handler, Player player1, Player player2)
         super(x, y, id);
         this.handler = handler;
         velX = 5;
         velY = 5;
-        player1_x = player1.getX();
-        player1_y = player1.getY();
-        player2_x = player2.getX();
-        player2_y = player2.getY();
+        //player1_x = player1.getX();
+        //player1_y = player1.getY();
+        //player2_x = player2.getX();
+        //player2_y = player2.getY();
     }
 
     public Rectangle getBounds(){
@@ -41,8 +42,6 @@ public class BasicEnemy extends GameObject {
 
 
         System.out.println("Enemy x:" + x + " y:" + y);
-        System.out.println("Player1 x:" + player1_x + " y:" + player1_y);
-        System.out.println("Player2 x:" + player2_x + " y:" + player2_y);
     }
 
     @Override
