@@ -14,6 +14,10 @@ import java.util.Random;
  * 2021 New Year Resolution
  */
 public class Game extends Canvas implements Runnable {
+    /*TODO
+    1) Create camera class so Player can be always center object in the window
+    2) Implement 2D lighting system with dynamic shadows
+    */
 
     private static final long serialVersionUID = 4983030414942140047L;
     public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
