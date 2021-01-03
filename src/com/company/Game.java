@@ -36,9 +36,9 @@ public class Game extends Canvas implements Runnable {
         hud = new HUD();
         spawner = new Spawn(handler, hud);
         random = new Random();
-
         Player player1 = new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Player, handler);
         Player player2 = new Player(WIDTH / 2 + 64, HEIGHT / 2 - 32, ID.Player2, handler);
+
         handler.addObject(player1);
         handler.addObject(player2);
 
